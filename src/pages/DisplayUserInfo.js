@@ -9,6 +9,10 @@ import { UserContext } from '../contexts/UserContex';
 import { useContext} from 'react';
 import MyCard from "../components/UI/MyCard";
 
+
+
+//profile page
+
 const DisplayUserInfo = () => {
 
   const navigate = useNavigate();
@@ -71,9 +75,6 @@ const DisplayUserInfo = () => {
         </Col>
         <Col sm={3} />
       </Row>
-      {/* <Row>
-        <ReviewList/>
-      </Row> */}
     </Layout>
   );
 };

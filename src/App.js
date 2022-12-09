@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -17,8 +18,14 @@ import UserMyReview from "./components/UserMyReview";
 import AddReview from "./pages/AddReview";
 import SearchHome from "./pages/SearchHome";
 import NoPage from "./pages/NoPage";
+import MovieReviewsDisplay from "./components/MovieReviewsDisplay";
 
 function App() {
+  // return(
+  // <>
+  // <MovieReviewsDisplay/>
+  // </>
+  // )
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const toggleTheme = () => {
     if (theme === "light") {
@@ -52,7 +59,7 @@ function App() {
                 path="/user/update-password"
                 element={<UpdatePassword />}
               />
-              <Route path="/addreview" element={<AddReview />} />
+              <Route path="/addreview/:movie_id" element={<AddReview />} />
 
               <Route path="/edit/:id" element={<EditReview />} />
               <Route path="*" element={<NoPage />} />

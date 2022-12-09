@@ -1,0 +1,24 @@
+#comments-section .comment-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+#comments-section .comment-item h3 {
+    margin-bottom: 0px;
+}
+#comments-section .comment-item h3 {
+    background: none;
+    font-size: 13px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    color: #494949;
+    margin-bottom: 5px;
+}

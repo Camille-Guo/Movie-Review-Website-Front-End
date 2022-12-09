@@ -1,5 +1,7 @@
 import React,{ useState , useEffect} from 'react'
 import {Routes, Route, useNavigate, useParams} from 'react-router-dom'
+import { User} from "../helpers/LocalStorage";
+
 import {
     MDBCol,
     MDBContainer,
@@ -10,13 +12,12 @@ import {
     MDBCardImage,
     MDBTypography,
   } from "mdb-react-ui-kit";
-import MyCard from '../components/UI/MyCard'
 import AddReviewButton from '../components/AddReviewButton'
 
-
-
 function  MovieInfo() {
+    const userInfo = User.getUser;
     const { movie_id } = useParams();
+    // console.log('33333 '+movie_id);
     const API_URL =
       "https://api.themoviedb.org/3/movie/" +
       movie_id +
@@ -24,6 +25,7 @@ function  MovieInfo() {
     const API_IMG = "https://image.tmdb.org/t/p/w500";
   
     const [movie, setMovie] = useState({});
+
   
     useEffect(() => {
       fetch(API_URL)
@@ -32,6 +34,7 @@ function  MovieInfo() {
           setMovie(data);
         });
     }, []);
+
     return(
         <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
@@ -69,14 +72,20 @@ function  MovieInfo() {
                       {/* Company: {movie.production_companies[0]} */}
                     </span>
                   </MDBTypography>
+                  <MDBTypography tag="h6" style={{ paddingTop: "10px" }}>
                   <div>
                     {movie.genres &&
                       movie.genres.length > 0 &&
                       movie.genres.map((gen) => <span>{gen.name} /</span>)}
                   </div>
+                  </MDBTypography>
+                  <MDBTypography tag="h6" style={{ paddingTop: "10px" }}>
+                      <AddReviewButton/>
+                  </MDBTypography>
+
+                 
                 </div>
               </div>
-              <p></p>
               <MDBCardBody className="text-black p-4">
                 <div className="mb-5">
                   <p
@@ -92,7 +101,7 @@ function  MovieInfo() {
                   </div>
                 </div>
               </MDBCardBody>
-              <AddReviewButton/>
+             
             </MDBCard>
           </MDBCol>
         </MDBRow>
@@ -100,6 +109,5 @@ function  MovieInfo() {
     )
                     }
 export default MovieInfo
-
 
 

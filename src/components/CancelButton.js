@@ -1,4 +1,5 @@
 import React from "react";
+import { Button} from "react-bootstrap";
 import { useState} from "react";
 
 
@@ -9,9 +10,9 @@ const handleCancel = () => {
     setInputValue("");
 };
 return (
-    <div>
-        <button type="submit" variant="outline-secondary" onClick={handleCancel}>Cancel</button>
-    </div>
+    <>
+        <Button type="submit" variant="secondary" onClick={handleCancel}>Cancel</Button>
+    </>
     );
 }
 export default CancelButton

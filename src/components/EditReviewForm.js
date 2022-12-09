@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import MyCard from "./UI/MyCard";
+import { Row, Col } from "react-bootstrap";
 
 function EditReviewForm() {
   // const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
@@ -83,43 +85,91 @@ function EditReviewForm() {
   return (
     <>
       <div className="App">
-        {movieName}
-        {username}
-        {moment(updateDate).format("YYYY-MM-DD hh:mm:ss a")}
-        <Rating
-          onClick={handleRating}
-          onPointerEnter={onPointerEnter}
-          onPointerLeave={onPointerLeave}
-          onPointerMove={onPointerMove}
-          initialValue={rating}
-          ratingValue={rating}
-          /* Available Props */
-        />
-
-        <Form onSubmit={handleSubmit}>
-          {/* <Form.Group className='mb-5'>
-          <Form.Text>{errorMsg}</Form.Text>
-        </Form.Group> */}
-          <Form.Group className="my-3 mx-3" controlId="formBasicEmail">
-            <Form.Control
-              as="textarea"
-              rows={3}
-              placeholder="Content Text"
-              value={inputContentText}
-              onChange={(e) => {
-                setInputContentText(e.target.value);
-              }}
-            />
-          </Form.Group>
-          <Button
-            variant="primary"
-            type="submit"
-            className="mx-3"
-            style={{ width: "100px", float: "right" }}
-          >
-            Submit
-          </Button>
-        </Form>
+        <MyCard>
+          <Row>
+            <Col sm={2} />
+            <Col sm={2}>
+              <h5 class="text-end">Movie Name:</h5>
+            </Col>
+            <Col sm={8}>
+              <p class="text-start">{movieName}</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={2} />
+            <Col sm={2}>
+              <h5 class="text-end">User Name:</h5>
+            </Col>
+            <Col sm={8}>
+              <p class="text-start">{username}</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={2} />
+            <Col sm={2}>
+              <h5 class="text-end">Rating:</h5>
+            </Col>
+            <Col sm={8}>
+              <p class="text-start">
+                {" "}
+                <Rating
+                  onClick={handleRating}
+                  onPointerEnter={onPointerEnter}
+                  onPointerLeave={onPointerLeave}
+                  onPointerMove={onPointerMove}
+                  initialValue={rating}
+                  ratingValue={rating}
+                  /* Available Props */
+                />
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={2} />
+            <Col sm={2}>
+              <h5 class="text-end">Update Date:</h5>
+            </Col>
+            <Col sm={8}>
+              <p class="text-start">
+                {" "}
+                {moment(updateDate).format("YYYY-MM-DD hh:mm:ss a")}
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={2} />
+            <Col sm={2}>
+              <h5 class="text-end">Comment:</h5>
+            </Col>
+            <Col sm={8} />
+          </Row>
+          <Row>
+            <Col sm={2} />
+            <Col sm={10}>
+              <Form onSubmit={handleSubmit}>
+                <Form.Group className="my-3 mx-3" controlId="formBasicEmail">
+                  <Form.Control
+                    as="textarea"
+                    rows={3}
+                    placeholder="Content Text"
+                    value={inputContentText}
+                    onChange={(e) => {
+                      setInputContentText(e.target.value);
+                    }}
+                  />
+                </Form.Group>
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="mx-3"
+                  style={{ width: "100px", float: "right" }}
+                >
+                  Submit
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+        </MyCard>
       </div>
     </>
   );

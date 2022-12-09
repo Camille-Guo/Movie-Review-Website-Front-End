@@ -6,6 +6,8 @@ const userContent = {
 	isLoggin: false,
 	username: '',
 	email: '',
+	password:'',
+	avatar: null,
 	id: '',
 };
 
@@ -22,6 +24,8 @@ const UserProvider = (props) => {
 			username: userInfo.username,
 			email: userInfo.email,
 			id: userInfo._id,
+			password: userInfo.password,
+			avatar:userInfo.avatar,
 			isLoggin: true,
 		};
 	}

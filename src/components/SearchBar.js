@@ -8,6 +8,7 @@ import {
 	Navbar,
 	Button,
 } from 'react-bootstrap';
+import * as FcIcons from "react-icons/fc";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function SearchBar(options) {
@@ -46,7 +47,7 @@ function SearchBar(options) {
 					{/* <Navbar.Brand href="">Welcome</Navbar.Brand> */}
 					{/* <Navbar.Brand href="">Trending</Navbar.Brand> */}
 					<Navbar.Toggle aria-controls="navbarScroll">
-						{' '}
+						{<FcIcons.FcSearch />}
 					</Navbar.Toggle>
 					<Navbar.Collapse id="navbarScroll">
 						<Nav

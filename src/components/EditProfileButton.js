@@ -6,7 +6,7 @@ function EditProfile() {
 	return (
 		<div>
 			<Link to="/edituser">
-				<Button variant="primary">Edit Your Profile</Button>
+				<Button variant="primary">Edit Profile</Button>
 			</Link>
 		</div>
 	);

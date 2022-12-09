@@ -12,3 +12,16 @@ export const User = {
 		localStorage.removeItem('user');
 	},
 };
+
+export const Movie = {
+	setMovie:(payload) =>{
+		localStorage.setItem(
+			'movie',
+			(typeof payload === 'object')? JSON.stringify(payload):payload 
+		);
+	},
+
+	getMovie : () =>{
+		return JSON.parse(localStorage.getItem('movie'));
+	}
+}

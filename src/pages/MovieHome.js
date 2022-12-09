@@ -13,10 +13,13 @@ const MovieHome = () => {
     fetch(API_URL)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log(data.results);
         setMovies(data.results);
       });
   }, []);
+  console.log('movies' + movies);
+  console.log('name: ' + movies.map((movie)=>movie.title ));
+
 
   return (
     <Layout>
