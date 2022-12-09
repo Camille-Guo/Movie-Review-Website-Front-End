@@ -1,4 +1,4 @@
-import React, { useRef,useState  } from "react";
+import React, { useEffect, useRef,useState  } from "react";
 import { useNavigate } from 'react-router-dom';
 import {
 	Container,
@@ -14,7 +14,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function SearchBar(options) {
   const navigate = useNavigate();
 	const [query, setQuery] = useState('');
-
 	const searchMovie = async (e) => {
 		e.preventDefault();
 		console.log('Searching');
@@ -27,8 +26,11 @@ function SearchBar(options) {
 		} catch (error) {
 			console.log(error);
 		}
+
+
 	};
 	const changeHandler = (e) => {
+		
 		setQuery(e.target.value);
 		// alert(query);
 		// localStorage.setItem("query", query);

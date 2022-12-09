@@ -49,11 +49,11 @@ function Sidebar() {
           <hr></hr>
           <p style={{ fontSize: "1.5vw", color: "beige" }}>Recommends</p>
           <li className="navbar-button">
-            <Link to={"/movie/347201"}>
+            <Link to="/movie/76600">
               <Button
                 className="nav-text"
                 style={{
-                  backgroundImage: "url('../images/naruto.png')",
+                  backgroundImage: "url('../images/avatar.jpg')",
                   backgroundSize: "cover",
                 }}
               >
@@ -75,11 +75,11 @@ function Sidebar() {
             </Link>
           </li>
           <li className="navbar-button">
-            <Link to="/movie/76600">
+            <Link to={"/movie/347201"}>
               <Button
                 className="nav-text"
                 style={{
-                  backgroundImage: "url('../images/avatar.jpg')",
+                  backgroundImage: "url('../images/naruto.png')",
                   backgroundSize: "cover",
                 }}
               >

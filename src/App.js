@@ -51,7 +51,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/profile" element={<DisplayUserInfo />} />
               <Route path="/myreview" element={<MyReview />} />
-              <Route path="/edituser" element={<UserPage />} />
+              <Route path="/user/edit" element={<UserPage />} />
               <Route path="/identity" element={<IdentityPage />}>
                 <Route path="#:slug" element={<IdentityPage />} />
               </Route>

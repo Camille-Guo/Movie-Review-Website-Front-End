@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 // import { Button } from "react-bootstrap";
 // import * as GiIcons from 'react-icons/gi';
 
-import LightIcon from "../images/LightIcon.jpg";
-import DarkIcon from "../images/DarkIcon.jpg";
+import LightIcon from "../images/LightIcon.png";
+import DarkIcon from "../images/DarkIcon.png";
 
 function ThemeButton() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -25,8 +25,8 @@ function ThemeButton() {
       {/* // <Button variant="outline-warning" onClick={toggleTheme}>
       //   <GiIcons.GiCardExchange style={{ width: '20px', height: '20px' }} />
       // </Button> */}
-
-      <div className={`App ${theme}`}>
+    <div>
+      {/* <div className={`${theme}`}> */}
         {/* <button onClick={toggleTheme}>Toggle Theme</button> */}
         {/* <span>Toggle Theme</span> */}
         {theme === "light" ? (
@@ -36,7 +36,7 @@ function ThemeButton() {
             className="d-flex 
     justify-content-start m-3"
             width={"70px"}
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", backgroundColor:'#fff !important'}}
             id="movie"
             onClick={() => toggleTheme()}
           />
@@ -48,7 +48,7 @@ function ThemeButton() {
   justify-content-start m-3"
             id="movie"
             width={"70px"}
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", backgroundColor:'#333 !important' }}
             onClick={() => toggleTheme()}
           />
         )}

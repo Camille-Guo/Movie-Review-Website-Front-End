@@ -1,11 +1,11 @@
 import React from "react";
-import EditUserInfoForm from "../components/EditUserInfoForm";
+import EditUserInfoForm1 from "../components/EditUserInfoForm1";
 import Layout from "../layout/Layout";
 
 const UserPage = () => {
   return (
     <Layout>
-      <EditUserInfoForm />
+      <EditUserInfoForm1 />
     </Layout>
   );
 };

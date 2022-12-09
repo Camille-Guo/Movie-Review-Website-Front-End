@@ -8,7 +8,7 @@ function LogoutButton() {
 	return (
 		<div>
 			<Link to="/identity#logout">
-				<Button variant="link text-white">Logout</Button>
+				<Button variant="secondary">Logout</Button>
 			</Link>
 		</div>
 	);
