@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function EditProfile() {
 	return (
 		<div>
-			<Link to="/edituser">
+			<Link to="/user/edit">
 				<Button variant="primary">Edit Profile</Button>
 			</Link>
 		</div>

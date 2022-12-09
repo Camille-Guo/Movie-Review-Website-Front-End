@@ -31,6 +31,8 @@ function Header() {
         {userInfo ? (
           <>
             <AvatarIcon />
+            <span>{userInfo.username}</span>
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
             <LogoutButton />
           </>
         ) : (

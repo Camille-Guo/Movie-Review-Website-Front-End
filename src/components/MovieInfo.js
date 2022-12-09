@@ -33,7 +33,7 @@ function  MovieInfo() {
         .then((data) => {
           setMovie(data);
         });
-    }, []);
+    }, [movie_id]);
 
     return(
         <MDBContainer className="py-5 h-100">
