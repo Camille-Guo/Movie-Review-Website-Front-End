@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import Button from "react-bootstrap/Button";
@@ -7,12 +7,13 @@ import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import MyCard from "./UI/MyCard";
 import { Row, Col } from "react-bootstrap";
+import { UserContext } from "../contexts/UserContex";
+import { User } from "../helpers/LocalStorage";
 
 function ReviewList() {
+  const user = useContext(UserContext);
   const [data, setData] = useState([]);
-  const [userId, setUserId] = useState(
-    localStorage.getItem("userId") || "1234"
-  );
+  const [userId, setUserId] = useState(user.id);
 
   const fetchData = () => {
     fetch("http://localhost:3001/commandreviews/get", {
