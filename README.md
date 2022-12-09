@@ -25,6 +25,8 @@ FrontEnd:
 -npm install
 -npm start
 -npm i react-simple-star-rating
+-npm i react-icons
+-npm i react-pro-sidebar
 
 -npm i rsuite
 -npm i moment
