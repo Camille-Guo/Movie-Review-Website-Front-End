@@ -21,21 +21,21 @@ const DisplayUserInfo = () => {
 	const username = user.username;
 	//const [message, setMessage] = useState('');
 
-	const fetchData = (e) => {
-		e.preventDefault();
-		fetch('http://localhost:3001/user/change-password', {
-			method: 'POST',
-			body: JSON.stringify({
-				username,
-				email,
-			}),
-			headers: {
-				'Content-type': 'application/json; charset=UTF-8',
-			},
-		})
-			.then((res) => res.json())
-			;
-	};
+	// const fetchData = (e) => {
+	// 	e.preventDefault();
+	// 	fetch('http://localhost:3001/user/change-password', {
+	// 		method: 'POST',
+	// 		body: JSON.stringify({
+	// 			username,
+	// 			email,
+	// 		}),
+	// 		headers: {
+	// 			'Content-type': 'application/json; charset=UTF-8',
+	// 		},
+	// 	})
+	// 		.then((res) => res.json())
+	// 		;
+	// };
   return (
     <Layout>
       <Row>
@@ -68,7 +68,7 @@ const DisplayUserInfo = () => {
           <EditProfileButton />
         </Col>
         <Col sm={2}>
-        <ChangePasswordButton/>
+
         </Col>
         <Col sm={2}>
           <MyReviewButton />

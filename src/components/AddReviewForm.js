@@ -12,24 +12,24 @@ import { User, Movie } from "../helpers/LocalStorage";
 // movie_id; movie_name; user_id; user_name;
 function AddReviewForm() {
   const user = useContext(UserContext);
-  const {movie_id} = useParams();
+  const { movie_id } = useParams();
   console.log(movie_id);
-  
+
   const API_URL =
-  "https://api.themoviedb.org/3/movie/" +
-  movie_id +
-  "?api_key=801f3117b8bdd3cee1d9c532a1edb00e";
+    "https://api.themoviedb.org/3/movie/" +
+    movie_id +
+    "?api_key=801f3117b8bdd3cee1d9c532a1edb00e";
   const [movie, setMovie] = useState({});
   useEffect(() => {
     fetch(API_URL)
       .then((response) => response.json())
       .then((data) => {
         setMovie(data);
-        console.info('data'+ data)
+        console.info("data" + data);
       });
   }, []);
   const movieId = movie_id;
-  const movieName = movie.title
+  const movieName = movie.title;
   // const [movieId, setMovieId] = useState(
   //   // localStorage.getItem("movieId") || "307463"
   //   movie_id
@@ -94,13 +94,10 @@ function AddReviewForm() {
     }
   };
 
-
-
-
   return (
     <>
       <div className="App">
-        <MyCard>
+        <MyCard style={{ backgroundColor: "#6c757d" }}>
           <Row>
             <Col sm={2} />
             <Col sm={2}>
@@ -147,7 +144,7 @@ function AddReviewForm() {
             <Col sm={8}>
               <p class="text-start">
                 {" "}
-                {moment(updateDate).format("YYYY-MM-DD hh:mm:ss a")}
+                {moment(updateDate).format("DD-MM-YYYY hh:mm:ss a")}
               </p>
             </Col>
           </Row>

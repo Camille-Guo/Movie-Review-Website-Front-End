@@ -19,13 +19,9 @@ import AddReview from "./pages/AddReview";
 import SearchHome from "./pages/SearchHome";
 import NoPage from "./pages/NoPage";
 import MovieReviewsDisplay from "./components/MovieReviewsDisplay";
+import NewPage from "./pages/NewPage";
 
 function App() {
-  // return(
-  // <>
-  // <MovieReviewsDisplay/>
-  // </>
-  // )
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const toggleTheme = () => {
     if (theme === "light") {
@@ -45,6 +41,7 @@ function App() {
           <div class="main">
             <Routes>
               <Route path="/" element={<MovieHome />} />
+              <Route path="/new_page" element={<NewPage/>} />
               <Route path="/movie/:movie_id" element={<DisplayMoviePage />} />
               <Route path="/searchhome" element={<SearchHome />} />
               <Route path="/popular" element={<MoviePopular />} />

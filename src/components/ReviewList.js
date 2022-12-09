@@ -14,7 +14,7 @@ function ReviewList() {
   const user = useContext(UserContext);
   const [data, setData] = useState([]);
   const [userId, setUserId] = useState(user.id);
-console.log('userId:' +userId);
+  console.log("userId:" + userId);
   const fetchData = () => {
     fetch("http://localhost:3001/commandreviews/get", {
       method: "POST",
@@ -70,7 +70,7 @@ console.log('userId:' +userId);
     <div className="App">
       {/* <div> */}
       {data.map((item, index) => (
-        <MyCard key={item + index}>
+        <MyCard style={{ backgroundColor: "#6c757d" }} key={item + index}>
           <Row>
             <Col sm={2} />
             <Col sm={2}>
@@ -105,7 +105,7 @@ console.log('userId:' +userId);
             <Col sm={8}>
               <p class="text-start">
                 {" "}
-                {moment(item.updateDate).format("YYYY-MM-DD hh:mm:ss a")}
+                {moment(item.updateDate).format("DD-MM-YYYY hh:mm:ss a")}
               </p>
             </Col>
           </Row>
