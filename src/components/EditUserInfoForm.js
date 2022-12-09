@@ -1,59 +1,85 @@
 import React from "react";
-import { Form, Button, Row, Col, Container } from "react-bootstrap";
-
+import { Form, Button, Row, Col, Container, Stack} from "react-bootstrap";
+import { useContext, useState } from 'react';
+import { useNavigate , Link} from 'react-router-dom';
+import { UserContext } from '../contexts/UserContex';
+import { User } from '../helpers/LocalStorage';
+import CancelButton from "./CancelButton";
 
 
 const EditUserInfoForm = () => {
+  const navigate = useNavigate();
+	const user = useContext(UserContext);
+	const email = user.email;
+  // const password = user.password;
+  // const avatar = user.avatar;
+	const [username, setUsername] = useState(user.username);
+	const [message, setMessage] = useState('');
 
+
+  const fetchData = (e) => {
+		e.preventDefault();
+		fetch('http://localhost:3001/user/edit', {
+			method: 'POST',
+			body: JSON.stringify({
+				email: email,
+        username: username,
+			}),
+			headers: {
+				'Content-type': 'application/json; charset=UTF-8',
+			},
+		})
+    .then((res) => res.json())
+    .then((res) => {
+      if (!res.message) {
+        User.setUser(res.data);
+        navigate('/');
+      } else {
+        setMessage(res.message);
+      }
+    });
+  }
   return (
-    <Container>
+    <>
       <Row>
-      <Col md={{ span: 6, offset: 4 }}>
-        <h1>Edit your information</h1>
+        <Col md={{ span: 3, offset: 4 }}>
+          <img src={'../images/person.png'} />
         </Col>
-        </Row>
-
-       <Row >
+      </Row>
+      <Row>
+        <Col md={{ span: 6, offset: 4 }}>
+          <h1>Edit your Profile</h1>
+        </Col>
+      </Row>
+       <Row>
           <Col md={{ span: 6, offset: 4 }}>
-            <Form>
+            <Form onSubmit={fetchData}>
+            
+            <div><h3>Email : {email}</h3></div>
+              
               <Form.Group controlId="name">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter Name"
+                  placeholder="Please input a new username"
+                  value={username}
+                  onChange={(e) => {
+                    setUsername(e.target.value);}}
                 ></Form.Control>
               </Form.Group>
-              <Form.Group controlId="email">
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter Email"              
-                ></Form.Control>
-              </Form.Group>
-              <Form.Group controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Enter Password"               
-                ></Form.Control>
-              </Form.Group>
-              <Form.Group controlId="confirmPassword">
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Confirm Password"
-                ></Form.Control>
-              </Form.Group>
-              <Form.Group controlId="pic">
-                <Form.Label>Change Profile Picture</Form.Label>
-                <Form.Control type="file" />
-              </Form.Group>
-              <Button type="submit" varient="primary">
-                Update
-              </Button>
+              {(message==='') && (
+					<Form.Group className="mx-3 mb-5">
+						<Form.Text>{message}</Form.Text>
+					</Form.Group>
+				)}
+                <Stack gap={2} className="col-md-5 mx-auto">
+                  <Button  type="submit" variant="primary">Save changes</Button>
+                  <CancelButton />
+                </Stack>
             </Form>
+            
           </Col>
         </Row>
-      </Container>
+      </>
   )};
 export default EditUserInfoForm;

@@ -3,23 +3,45 @@ import { Rating } from "react-simple-star-rating";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import MyCard from "./UI/MyCard";
 import { Row, Col } from "react-bootstrap";
 import { UserContext } from "../contexts/UserContex";
-import { User } from "../helpers/LocalStorage";
+import { User, Movie } from "../helpers/LocalStorage";
 
 // movie_id; movie_name; user_id; user_name;
 function AddReviewForm() {
   const user = useContext(UserContext);
-  const [movieId, setMovieId] = useState(
-    localStorage.getItem("movieId") || "307463"
-  );
-  const [movieName, setMovieName] = useState(
-    localStorage.getItem("movieName") || "spider man2"
-  );
-  const [userId, setUserId] = user.id;
-  const [username, setUsername] = user.username;
+  const {movie_id} = useParams();
+  console.log(movie_id);
+  
+  const API_URL =
+  "https://api.themoviedb.org/3/movie/" +
+  movie_id +
+  "?api_key=801f3117b8bdd3cee1d9c532a1edb00e";
+  const [movie, setMovie] = useState({});
+  useEffect(() => {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((data) => {
+        setMovie(data);
+        console.info('data'+ data)
+      });
+  }, []);
+  const movieId = movie_id;
+  const movieName = movie.title
+  // const [movieId, setMovieId] = useState(
+  //   // localStorage.getItem("movieId") || "307463"
+  //   movie_id
+
+  // );
+  // const [movieName, setMovieName] = useState(
+  //   // localStorage.getItem("movieName") || "spider man2"
+  //   movie.title
+  // );
+
+  const [userId, setUserId] = useState(user.id);
+  const [username, setUsername] = useState(user.username);
   const [inputContentText, setInputContentText] = useState();
   const [rating, setRating] = useState(0);
 
@@ -71,6 +93,9 @@ function AddReviewForm() {
       console.log(error);
     }
   };
+
+
+
 
   return (
     <>

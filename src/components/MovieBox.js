@@ -18,10 +18,10 @@ const MovieBox = ({ id,title, poster_path, vote_average, release_date, overview 
                 <div className='card-body'>
                     <button type="button" className="btn btn-dark" onClick={handleShow}>View Movie</button>
                     <Modal show={show} onHide={handleClose} >
-                        <Modal.Header closeButton>
+                        <Modal.Header style={{color:'black'}} closeButton>
                             <Modal.Title><h3>{title}</h3></Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>
+                        <Modal.Body style={{color:'black'}}>
                             <img className='card-img-top' style={{width:'14rem'}} src={API_IMG + poster_path} alt="img"></img>
                             <br></br>
                             <h5>IMDb Average: {vote_average}</h5>

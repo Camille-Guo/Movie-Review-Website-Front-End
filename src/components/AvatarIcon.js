@@ -1,24 +1,14 @@
 import React from "react";
-import { Button } from 'react-bootstrap'
-import { useNavigate } from "react-router-dom";
+
 
 function AvatarIcon() {
-  const navigate = useNavigate();
-  const handleSubmit = (event) => {
-    try {
-      navigate("/profile", { replace: true });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  return (
-    <div style={{ flexDirection: "row", direction: "rtl" }}>
-      <Button style={{backgroundColor:"white",backgroundSize:"cover", borderRadius:'45%'}} onClick={handleSubmit}>
-      <img src={"../images/person.png"} alt="img" size="20" height="20" width="20" />
-      </Button>
+  return ( 
+    <div>
+      <a class="nav-link p-0" href="/profile">
+      <img src={"../images/person.png"} class="rounded-circle z-depth-0" alt="avatar image" height="35"></img>
+      </a>
     </div>
   );
-
 }
 
 export default AvatarIcon;

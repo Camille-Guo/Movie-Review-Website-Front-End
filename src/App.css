@@ -44,13 +44,27 @@
 
 .dark {
   background-color: #333;
+  /* background-image: url('/public/images/bgimg-dark.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position: fixed;
   color: #fff;
-  }
-  .light {
-  background-color: #fff;
-  color: #333;
-  }
+}
 
+.light {
+  background-color: #fff;
+  /* background-image: url('/public/images/bgimg.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position: fixed;
+  color: #333;
+}
+
+Button {
+  box-shadow: 2px 2px 5px #ccc;
+}
 
 /* * {
   box-sizing: border-box;
@@ -67,9 +81,9 @@ body {
   background-position: fixed;
 } */
 
-.container{
+.container {
   width: 100%;
-  margin:1em auto;
+  margin: 1em auto;
   /* background-color: darkslategray; */
   /* margin: 20px;
   padding: 20px;
@@ -80,8 +94,7 @@ body {
 
 .main {
   display: flex;
-  /* margin-top: -48%; */
-  align-items: center; 
+  align-items: center;
   justify-content: center;
 }
 
@@ -98,19 +111,8 @@ body {
   margin-left: 5%;
   margin-bottom: 10%;
   border: 1px solid black;
-  
-}
 
-/* .movie1,
-.movie2,
-.movie3 {
-  display: flex;
-  font-size: 20px;
-  border: 1px solid black;
-  height: 50vh;
-  margin-left: 5%;
-  margin-bottom: 10%;
-} */
+}
 
 .grid {
   display: grid;

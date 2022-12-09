@@ -1,9 +1,6 @@
 .nav-menu {
     font-size: 1.2vw;
-    width: 15%;
-    margin-bottom: 10%;
-    /* display: flex;   */
-    
+    margin-top: -8%;
 }
 
 .navbar-button{
@@ -19,7 +16,8 @@
 .nav-text {
     align-items: center;
     list-style: none;
-    color: beige;
+    color: beige;    
+    box-shadow: 2px 2px 5px #ccc;
     border-radius: 1vw;
     width: 12vw;
     margin-bottom: 5%;
@@ -29,8 +27,9 @@
 }
 
 #logo {
-    width: 100%;
-    /* display: flex; */
+    width: 95%;
+    border-radius: 20px 0;
+    box-shadow: 7px 7px 20px #ccc;
     justify-content: flex-start;
     align-items: center;
     background-color:beige;

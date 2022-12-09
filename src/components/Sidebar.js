@@ -10,7 +10,7 @@ function Sidebar() {
   return (
     <>
       <nav className="nav-menu justify-content-center">
-        <ul className="pe-5">
+        <ul style={{padding: '0'}}>
           <li className="navbar-button">
             <Link to="/">
               <img src="../images/logo.png" alt="logo" id="logo"></img>
@@ -46,7 +46,7 @@ function Sidebar() {
               </Button>
             </Link>
           </li>
-          <hr style={{ width: "70%" }}></hr>
+          <hr></hr>
           <p style={{ fontSize: "1.5vw", color: "beige" }}>Recommends</p>
           <li className="navbar-button">
             <Link to={"/movie/347201"}>
@@ -87,7 +87,7 @@ function Sidebar() {
               </Button>
             </Link>
           </li>
-          <hr style={{ width: "70%" }}></hr>
+          <hr></hr>
           <p
             style={{
               fontSize: "1vw",

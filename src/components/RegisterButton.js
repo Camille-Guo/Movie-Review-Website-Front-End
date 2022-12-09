@@ -8,7 +8,7 @@ function RegisterButton() {
 	return (
 		<div>
 			<Link to="/identity#register">
-				<Button variant="link" className='text-white'>Register</Button>
+				<Button variant="success" className='text-white' style={{margin:'10px'}}>Register</Button>
 			</Link>
 		</div>
 	);

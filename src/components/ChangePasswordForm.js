@@ -36,11 +36,10 @@ const ChangePasswordForm = () => {
 				console.info(res)
 				console.info(message)
 				if (!res.message) {
-					setMessage(res.message);
-				} else {
 					User.setUser(res.data);
-
 					navigate('/');
+				} else {
+					setMessage(res.message);
 				}
 			});
 	};

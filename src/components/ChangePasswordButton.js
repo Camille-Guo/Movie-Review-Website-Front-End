@@ -2,13 +2,13 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
-function EditProfile() {
+function ChangePassword() {
 	return (
 		<div>
-			<Link to="/edituser">
-				<Button variant="primary">Edit Profile</Button>
+			<Link to="/user/update-password">
+				<Button variant="primary">Change Password</Button>
 			</Link>
 		</div>
 	);
 }
-export default EditProfile;
+export default ChangePassword;

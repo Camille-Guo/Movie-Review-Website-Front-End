@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../layout/Layout";
-import { Row, Col, Container } from "react-bootstrap";
-import MovieInfo from '../components/MovieInfo'
+import MovieInfo from "../components/MovieInfo";
+import MovieReviewsDisplay from "../components/MovieReviewsDisplay";
 
 function DisplayMoviePage() {
-  
+  // const movieId = { movie_id };
+  // const movieId = '123';
   return (
     <Layout>
-      <MovieInfo/>
+      <MovieInfo />
+      <MovieReviewsDisplay/>
     </Layout>
   );
 }

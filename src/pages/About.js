@@ -14,13 +14,13 @@ import Layout from '../layout/Layout';
 function About() {
     return (
         <Layout>
-            <div className="container" style={{ width: '80%', marginLeft: '18%' }}>
+            <div className="container" style={{ width: '80%', marginLeft: '8%' }}>
                 <MDBRow className='row-cols-1 row-cols-md-1 g-4'>
                     <MDBCol>
                         <MDBCard>
                             <div className="rounded-top d-flex flex-row" style={{ backgroundColor: 'beige', height: '80px' }}>
                                 <div className="ms-3" style={{ marginTop: '20px' }}>
-                                    <MDBTypography tag="h2">Project MONVIE - Team BK</MDBTypography>
+                                    <MDBTypography tag="h2" style={{ color: 'black', textShadow: '2px 2px 5px red'}}>Project MONVIE - Team BK</MDBTypography>
                                 </div>
                             </div>
                             <p></p>
@@ -43,7 +43,7 @@ function About() {
                         <MDBCard>
                             <div className="rounded-top d-flex flex-row" style={{ backgroundColor: 'gold', height: '70px' }}>
                                 <div className="ms-3" style={{ marginTop: '20px' }}>
-                                    <MDBTypography tag="h4">Member Name</MDBTypography>
+                                    <MDBTypography tag="h4" style={{ color: 'black' }}>Member Name</MDBTypography>
                                 </div>
                             </div>
                             <p></p>
@@ -63,7 +63,7 @@ function About() {
                         <MDBCard>
                             <div className="rounded-top d-flex flex-row" style={{ backgroundColor: 'lavender', height: '70px' }}>
                                 <div className="ms-3" style={{ marginTop: '20px' }}>
-                                    <MDBTypography tag="h4">Member Name</MDBTypography>
+                                    <MDBTypography tag="h4" style={{ color: 'black' }}>Member Name</MDBTypography>
                                 </div>
                             </div>
                             <p></p>
@@ -86,7 +86,7 @@ function About() {
                         <MDBCard>
                             <div className="rounded-top d-flex flex-row" style={{ backgroundColor: 'lavender', height: '70px' }}>
                                 <div className="ms-3" style={{ marginTop: '20px' }}>
-                                    <MDBTypography tag="h4">Member Name</MDBTypography>
+                                    <MDBTypography tag="h4" style={{ color: 'black' }}>Member Name</MDBTypography>
                                 </div>
                             </div>
                             <p></p>
@@ -106,7 +106,7 @@ function About() {
                         <MDBCard>
                             <div className="rounded-top d-flex flex-row" style={{ backgroundColor: 'lavender', height: '70px' }}>
                                 <div className="ms-3" style={{ marginTop: '20px' }}>
-                                    <MDBTypography tag="h4">Member Name</MDBTypography>
+                                    <MDBTypography tag="h4" style={{ color: 'black' }}>Member Name</MDBTypography>
                                 </div>
                             </div>
                             <p></p>
