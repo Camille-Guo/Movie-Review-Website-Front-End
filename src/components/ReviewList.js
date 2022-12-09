@@ -68,8 +68,9 @@ function ReviewList() {
   return (
     <div className="App">
       {/* <div> */}
+      {/* {data.length > 0 ? ( */}
       {data.map((item, index) => (
-        <MyCard style={{backgroundColor:'#6c757d'}} key={item + index}>
+        <MyCard style={{ backgroundColor: "#6c757d" }} key={item + index}>
           <Row>
             <Col sm={2} />
             <Col sm={2}>
@@ -104,7 +105,7 @@ function ReviewList() {
             <Col sm={8}>
               <p class="text-start">
                 {" "}
-                {moment(item.updateDate).format("YYYY-MM-DD hh:mm:ss a")}
+                {moment(item.updateDate).format("DD-MM-YYYY h:mm:ss a")}
               </p>
             </Col>
           </Row>
@@ -148,6 +149,9 @@ function ReviewList() {
           </Row>
         </MyCard>
       ))}
+      {/* ) : (
+          <h5 class="text-center">Sorry!! No Movies Found!</h5>
+        )} */}
     </div>
   );
 }

@@ -85,7 +85,7 @@ function EditReviewForm() {
   return (
     <>
       <div className="App">
-        <MyCard>
+        <MyCard style={{ backgroundColor: "#6c757d" }}>
           <Row>
             <Col sm={2} />
             <Col sm={2}>
@@ -132,7 +132,7 @@ function EditReviewForm() {
             <Col sm={8}>
               <p class="text-start">
                 {" "}
-                {moment(updateDate).format("YYYY-MM-DD hh:mm:ss a")}
+                {moment(updateDate).format("DD-MM-YYYY h:mm:ss a")}
               </p>
             </Col>
           </Row>
