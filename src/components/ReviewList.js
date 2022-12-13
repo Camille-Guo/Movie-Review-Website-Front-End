@@ -7,8 +7,11 @@ import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import MyCard from "./UI/MyCard";
 import { Row, Col } from "react-bootstrap";
+import { UserContext } from "../contexts/UserContex";
+import { User } from "../helpers/LocalStorage";
 
 function ReviewList() {
+  const user = useContext(UserContext);
   const [data, setData] = useState([]);
   const [userId, setUserId] = useState(user.id);
   console.log("userId:" + userId);
