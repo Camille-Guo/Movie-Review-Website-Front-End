@@ -10,10 +10,8 @@ import { Row, Col } from "react-bootstrap";
 
 function ReviewList() {
   const [data, setData] = useState([]);
-  const [userId, setUserId] = useState(
-    localStorage.getItem("userId") || "1234"
-  );
-
+  const [userId, setUserId] = useState(user.id);
+  console.log("userId:" + userId);
   const fetchData = () => {
     fetch("http://localhost:3001/commandreviews/get", {
       method: "POST",
@@ -105,7 +103,7 @@ function ReviewList() {
             <Col sm={8}>
               <p class="text-start">
                 {" "}
-                {moment(item.updateDate).format("DD-MM-YYYY h:mm:ss a")}
+                {moment(item.updateDate).format("DD-MM-YYYY hh:mm:ss a")}
               </p>
             </Col>
           </Row>

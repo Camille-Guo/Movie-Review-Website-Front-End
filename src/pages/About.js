@@ -101,9 +101,8 @@ function About() {
                                                 <li>User Page</li>
                                                 <li>View Profile</li>
                                                 <li>Edit Profile</li>
-                                                <li>User Avatar</li>
-                                                <li>Edit Avatar</li>
-                                                <li>User Reviews</li>
+                                                <li>Edit profile button</li>
+                                                <li>User Reviews button</li>
                                                 <li>Display User Info</li>
                                                 <p></p>
                                             </ul>

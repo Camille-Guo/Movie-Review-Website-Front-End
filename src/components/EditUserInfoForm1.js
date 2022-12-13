@@ -92,7 +92,7 @@ const EditUserInfoForm1 = () => {
             }}
           />
         </Form.Group>
-        {message === "" && (
+        {message && (
           <Form.Group className="mx-3 mb-5 text-warning">
             <Form.Text>{message}</Form.Text>
           </Form.Group>

@@ -132,7 +132,7 @@ function EditReviewForm() {
             <Col sm={8}>
               <p class="text-start">
                 {" "}
-                {moment(updateDate).format("DD-MM-YYYY h:mm:ss a")}
+                {moment(updateDate).format("DD-MM-YYYY hh:mm:ss a")}
               </p>
             </Col>
           </Row>
